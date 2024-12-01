@@ -21,11 +21,12 @@ https://ashwinnagasai.shinyapps.io/Developing_Data_Products_Final_Project/
 
 The app uses linear regression to predict Fertility using  Agriculture and Education as the predictors  
 
-The Shiny App Source code is available at 
+The Shiny App Source code is available at https://github.com/AshwinNagasai/Developing-Data-Products
 
 ## Data  
 
-Swiss Fertility data with standardized fertility measure and socioeconomic indicators for each of 47 French-speaking provinces of Switzerland at 1888. The data frame has 47 observations with 6 variables, the variables considered are    
+Swiss Fertility data with standardized fertility measure and socioeconomic indicators for each of 47 French-speaking provinces of Switzerland at 1888. The data frame has 47 observations with 6 variables, the variables considered are   
+
 - Fertility (Ig) - common standardized fertility measure  
 - Agriculture - % of males involved in agriculture as occupation  
 - Education - % education beyond primary school for draftees  
@@ -35,9 +36,8 @@ Swiss Fertility data with standardized fertility measure and socioeconomic indic
 head(swiss, 3)
 ```
 
-## Plot
+## R Code for Plot
 
-The Plot was generated using the following code  
 
 ```{r, echo=TRUE, message=FALSE}
 library(ggplot2)
