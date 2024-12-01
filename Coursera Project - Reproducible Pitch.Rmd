@@ -1,0 +1,58 @@
+---
+title: "Developing Data Products Final Project - Reproducible Pitch"
+author: "Ashwin Sai Murali Neelakandan"
+date: "2024-12-01"
+output: 
+  ioslides_presentation: 
+    keep_md: true
+    widescreen: true
+    fig_width: 8
+    fig_height: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Background  
+
+This presentation is created using R markdown in RStudio as a pitch for the Shiny app that can be found at  
+https://ashwinnagasai.shinyapps.io/Developing_Data_Products_Final_Project/   
+
+The app uses linear regression to predict Fertility using  Agriculture and Education as the predictors  
+
+The Shiny App Source code is available at 
+
+## Data  
+
+Swiss Fertility data with standardized fertility measure and socioeconomic indicators for each of 47 French-speaking provinces of Switzerland at 1888. The data frame has 47 observations with 6 variables, the variables considered are    
+- Fertility (Ig) - common standardized fertility measure  
+- Agriculture - % of males involved in agriculture as occupation  
+- Education - % education beyond primary school for draftees  
+   
+```{r, echo = FALSE}
+# Looking at the data set
+head(swiss, 3)
+```
+
+## Plot
+
+The Plot was generated using the following code  
+
+```{r, echo=TRUE, message=FALSE}
+library(ggplot2)
+library(plotly)
+g <- ggplot(data = swiss, aes(Agriculture, Fertility), 
+            xlab("Agriculture"), 
+            ylab("Fertility"))
+g = g + geom_point(size = 5, color = "blue", alpha = 0.2)
+g = g + geom_point(size = 5, color = "red", alpha = 0.2) 
+g = g + geom_smooth(method = lm, color = "grey0")
+finalplot <- ggplotly(g)
+```
+
+## Regression Model - Fertility Vs Agriculture
+
+```{r, fig.align='center'}
+finalplot
+```  
